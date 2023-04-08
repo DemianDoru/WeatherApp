@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Meteo.net</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="search">
+        <input type="text" placeholder="Enter City name" />
+        <button><img src="/images/search.png" alt="" /></button>
+      </div>
+
+      <div class="weather">
+        <img src="images/rain.png" class="weather-icon" />
+        <h2 class="temp">3°C</h2>
+        <h3 class="city-name">New York</h3>
+        <div class="details">
+          <div class="col1">
+            <img src="/images/humidity.png" />
+            <div>
+              <p style="font-size: 24px">Humidity</p>
+              <p class="humidity">50%</p>
+            </div>
+          </div>
+          <div class="col2">
+            <img src="/images/wind.png" />
+            <div>
+              <p style="font-size: 24px">Wind</p>
+              <p class="wind">10 km/h</p>
+            </div>
+          </div>
+          <div class="col3">
+            <img src="/images/wind.png" />
+            <div>
+              <p style="font-size: 24px">Temp resimțită</p>
+              <p class="temp-res">10 km/h</p>
+            </div>
+          </div>
+          <div class="col4">
+            <img src="/images/wind.png" />
+            <div>
+              <p style="font-size: 24px">Răsărit</p>
+              <p class="sunrise">07:20</p>
+            </div>
+          </div>
+          <div class="col5">
+            <img src="/images/wind.png" />
+            <div>
+              <p style="font-size: 24px">Apus</p>
+              <p class="sunset">20:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ///////////////  Hourly Forecast ////// -->
+
+      <div class="container-hourcast">
+        <div class="title-hourcast">
+          <h2 class="title-hourly">Vremea pe ore</h2> 
+
+            <h3>Joi</h3>
+        </div>
+        <div class="container-hourly">
+          <div class="wrapper-hour">
+            <div class="1st-displayed">
+              <p class="hour" style="padding-top: 20%">12:00</p>
+              <p class="temp" style="padding-top: 20%">3°</p>
+              <img
+                class="img-hour"
+                src="/images/02d.png"
+                alt=""
+                style="padding-top: 20%"
+              />
+              <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+            </div>
+          </div>
+          <div class="wrapper-hour">
+            <div class="1st-displayed">
+              <p class="hour" style="padding-top: 20%">12:00</p>
+              <p class="temp" style="padding-top: 20%">3°</p>
+              <img
+                class="img-hour"
+                src="/images/02d.png"
+                alt=""
+                style="padding-top: 20%"
+              />
+              <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+            </div>
+          </div>
+          <div class="wrapper-hour">
+            <div class="1st-displayed">
+              <p class="hour" style="padding-top: 20%">12:00</p>
+              <p class="temp" style="padding-top: 20%">3°</p>
+              <img
+                class="img-hour"
+                src="/images/02d.png"
+                alt=""
+                style="padding-top: 20%"
+              />
+              <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+            </div>
+          </div>
+          <div class="wrapper-hour">
+            <div class="1st-displayed">
+              <p class="hour" style="padding-top: 20%">12:00</p>
+              <p class="temp" style="padding-top: 20%">3°</p>
+              <img
+                class="img-hour"
+                src="/images/02d.png"
+                alt=""
+                style="padding-top: 20%"
+              />
+              <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+            </div>
+          </div>
+          <div class="wrapper-hour">
+            <div class="1st-displayed">
+              <p class="hour" style="padding-top: 20%">12:00</p>
+              <p class="temp" style="padding-top: 20%">3°</p>
+              <img
+                class="img-hour"
+                src="/images/02d.png"
+                alt=""
+                style="padding-top: 20%"
+              />
+              <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /////////// 7 Day Forecast //////////////// -->
+
+      <div class="container-7day-forecast">
+        <div class="title-7day">
+          <h2>Vremea 7 zile</h2>
+        </div>
+        <div class="day7-content">
+          <div class="wrapper-hour-2">
+            <div class="1st-displayed">
+              <h3 class="title-daily">Astăzi</h3>
+              <time datetime="dd/mm">06.04</time>
+              <p class="max-7day" style="padding-top: 20%">3°</p>
+              <p class="min-7day" style="padding-top: 20%">3°</p>
+              <img
+                class="img-hour"
+                src="/images/02d.png"
+                alt=""
+                style="padding-top: 20%"
+              />
+              <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+            </div>
+          </div>
+            <div class="wrapper-hour-2">
+              <div class="1st-displayed">
+                <h3 class="title-daily">Vineri</h3>
+                <time datetime="dd/mm">07.04</time>
+                <p class="max-7day" style="padding-top: 20%">3°</p>
+                <p class="min-7day" style="padding-top: 20%">3°</p>
+                <img
+                  class="img-hour"
+                  src="/images/02d.png"
+                  alt=""
+                  style="padding-top: 20%"
+                />
+                <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+              </div>
+            </div>
+            <div class="wrapper-hour-2">
+              <div class="1st-displayed">
+                <h3 class="title-daily">Sâmbătă</h3>
+                <time datetime="dd/mm">08.04</time>
+                <p class="max-7day" style="padding-top: 20%">3°</p>
+                <p class="min-7day" style="padding-top: 20%">3°</p>
+                <img
+                  class="img-hour"
+                  src="/images/02d.png"
+                  alt=""
+                  style="padding-top: 20%"
+                />
+                <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+              </div>
+            </div>
+            <div class="wrapper-hour-2">
+              <div class="1st-displayed">
+                <h3 class="title-daily">Duminică</h3>
+                <time datetime="dd/mm">09.04</time>
+                <p class="max-7day" style="padding-top: 20%">3°</p>
+                <p class="min-7day" style="padding-top: 20%">3°</p>
+                <img
+                  class="img-hour"
+                  src="/images/02d.png"
+                  alt=""
+                  style="padding-top: 20%"
+                />
+                <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+              </div>
+            </div>
+            <div class="wrapper-hour-2">
+              <div class="1st-displayed">
+                <h3 class="title-daily">Luni</h3>
+                <time datetime="dd/mm">10.04</time>
+                <p class="max-7day" style="padding-top: 20%">3°</p>
+                <p class="min-7day" style="padding-top: 20%">3°</p>
+                <img
+                  class="img-hour"
+                  src="/images/02d.png"
+                  alt=""
+                  style="padding-top: 20%"
+                />
+                <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+              </div>
+            </div>
+            <div class="wrapper-hour-2">
+              <div class="1st-displayed">
+                <h3 class="title-daily">Marți</h3>
+                <time datetime="dd/mm">11.04</time>
+                <p class="max-7day" style="padding-top: 20%">3°</p>
+                <p class="min-7day" style="padding-top: 20%">3°</p>
+                <img
+                  class="img-hour"
+                  src="/images/02d.png"
+                  alt=""
+                  style="padding-top: 20%"
+                />
+                <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+              </div>
+            </div>
+            <div class="wrapper-hour-2">
+              <div class="1st-displayed">
+                <h3 class="title-daily">Miercuri</h3>
+                <time datetime="dd/mm">12.04</time>
+                <p class="max-7day" style="padding-top: 20%">3°</p>
+                <p class="min-7day" style="padding-top: 20%">3°</p>
+                <img
+                  class="img-hour"
+                  src="/images/02d.png"
+                  alt=""
+                  style="padding-top: 20%"
+                />
+                <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="project.js"></script>
+  </body>
+</html>
