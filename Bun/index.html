@@ -5,50 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Meteo.net</title>
   </head>
   <body>
+    <h1>where is Oradea</h1>
+    <p>
+      latitude: <span id="lat"></span><br />
+      longitude: <span id="lon"></span
+    ></p>
+
     <div class="card">
       <div class="search">
         <input type="text" placeholder="Enter City name" />
-        <button><img src="/images/search.png" alt="" /></button>
+        <button><img src="images/search.png" alt="" /></button>
       </div>
 
       <div class="weather">
         <img src="images/rain.png" class="weather-icon" />
-        <h2 class="temp">3°C</h2>
+        <h2 class="temperature">3°C</h2>
         <h3 class="city-name">New York</h3>
         <div class="details">
           <div class="col1">
-            <img src="/images/humidity.png" />
+            <img src="images/humidity.png" />
             <div>
               <p style="font-size: 24px">Humidity</p>
               <p class="humidity">50%</p>
             </div>
           </div>
           <div class="col2">
-            <img src="/images/wind.png" />
+            <img src="images/wind.png" />
             <div>
               <p style="font-size: 24px">Wind</p>
               <p class="wind">10 km/h</p>
             </div>
           </div>
           <div class="col3">
-            <img src="/images/wind.png" />
+            <img src="images/feels.png" id="img-feels" />
             <div>
               <p style="font-size: 24px">Temp resimțită</p>
               <p class="temp-res">10 km/h</p>
             </div>
           </div>
           <div class="col4">
-            <img src="/images/wind.png" />
+            <img src="images/sunrise1.png" id="img-sunrise" />
             <div>
               <p style="font-size: 24px">Răsărit</p>
               <p class="sunrise">07:20</p>
             </div>
           </div>
           <div class="col5">
-            <img src="/images/wind.png" />
+            <img src="/images/sunset.png" id="img-sunset" />
             <div>
               <p style="font-size: 24px">Apus</p>
               <p class="sunset">20:00</p>
@@ -61,74 +71,63 @@
 
       <div class="container-hourcast">
         <div class="title-hourcast">
-          <h2 class="title-hourly">Vremea pe ore</h2> 
-
-            <h3>Joi</h3>
+          <h2 class="title-hourly">Vremea pe ore 24/h</h2>
         </div>
         <div class="container-hourly">
           <div class="wrapper-hour">
             <div class="1st-displayed">
-              <p class="hour" style="padding-top: 20%">12:00</p>
-              <p class="temp" style="padding-top: 20%">3°</p>
-              <img
-                class="img-hour"
-                src="/images/02d.png"
-                alt=""
-                style="padding-top: 20%"
-              />
-              <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+              <p class="hour" id="hour1" style="padding-top: 20%">12:00</p>
+              <p class="temp" id="temp1" style="padding-top: 20%">3°</p>
+              <img class="img-hour1" src="" alt="" style="padding-top: 20%" />
             </div>
           </div>
           <div class="wrapper-hour">
             <div class="1st-displayed">
-              <p class="hour" style="padding-top: 20%">12:00</p>
-              <p class="temp" style="padding-top: 20%">3°</p>
-              <img
-                class="img-hour"
-                src="/images/02d.png"
-                alt=""
-                style="padding-top: 20%"
-              />
-              <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+              <p class="hour" id="hour2" style="padding-top: 20%">12:00</p>
+              <p class="temp" id="temp2" style="padding-top: 20%">3°</p>
+              <img class="img-hour2" src="" alt="" style="padding-top: 20%" />
             </div>
           </div>
           <div class="wrapper-hour">
             <div class="1st-displayed">
-              <p class="hour" style="padding-top: 20%">12:00</p>
-              <p class="temp" style="padding-top: 20%">3°</p>
-              <img
-                class="img-hour"
-                src="/images/02d.png"
-                alt=""
-                style="padding-top: 20%"
-              />
-              <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+              <p class="hour" id="hour3" style="padding-top: 20%">12:00</p>
+              <p class="temp" id="temp3" style="padding-top: 20%">3°</p>
+              <img class="img-hour3" src="" alt="" style="padding-top: 20%" />
             </div>
           </div>
           <div class="wrapper-hour">
             <div class="1st-displayed">
-              <p class="hour" style="padding-top: 20%">12:00</p>
-              <p class="temp" style="padding-top: 20%">3°</p>
-              <img
-                class="img-hour"
-                src="/images/02d.png"
-                alt=""
-                style="padding-top: 20%"
-              />
-              <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+              <p class="hour" id="hour4" style="padding-top: 20%">12:00</p>
+              <p class="temp" id="temp4" style="padding-top: 20%">3°</p>
+              <img class="img-hour4" src="" alt="" style="padding-top: 20%" />
             </div>
           </div>
           <div class="wrapper-hour">
             <div class="1st-displayed">
-              <p class="hour" style="padding-top: 20%">12:00</p>
-              <p class="temp" style="padding-top: 20%">3°</p>
-              <img
-                class="img-hour"
-                src="/images/02d.png"
-                alt=""
-                style="padding-top: 20%"
-              />
-              <p class="prob-evenim" style="padding-top: 10%">40 %</p>
+              <p class="hour" id="hour5" style="padding-top: 20%">12:00</p>
+              <p class="temp" id="temp5" style="padding-top: 20%">3°</p>
+              <img class="img-hour5" src="" alt="" style="padding-top: 20%" />
+            </div>
+          </div>
+          <div class="wrapper-hour">
+            <div class="1st-displayed">
+              <p class="hour" id="hour6" style="padding-top: 20%">12:00</p>
+              <p class="temp" id="temp6" style="padding-top: 20%">3°</p>
+              <img class="img-hour6" src="" alt="" style="padding-top: 20%" />
+            </div>
+          </div>
+          <div class="wrapper-hour">
+            <div class="1st-displayed">
+              <p class="hour" id="hour7" style="padding-top: 20%">12:00</p>
+              <p class="temp" id="temp7" style="padding-top: 20%">3°</p>
+              <img class="img-hour7" src="" alt="" style="padding-top: 20%" />
+            </div>
+          </div>
+          <div class="wrapper-hour">
+            <div class="1st-displayed">
+              <p class="hour" id="hour8" style="padding-top: 20%">12:00</p>
+              <p class="temp" id="temp8" style="padding-top: 20%">3°</p>
+              <img class="img-hour8" src="" alt="" style="padding-top: 20%" />
             </div>
           </div>
         </div>
@@ -136,20 +135,56 @@
 
       <!-- /////////// 7 Day Forecast //////////////// -->
 
-      <div class="container-7day-forecast">
-        <div class="title-7day">
-          <h2>Vremea 7 zile</h2>
+      <div class="container-5day-forecast">
+        <div class="title-5day">
+          <h2>Vremea pe 5 zile</h2>
         </div>
-        <div class="day7-content">
+        <div id="weatherContainer">
+          <div id="iconsContainer">
+            <div class="icons">
+              <p class="wheather" id="day1"></p>
+              <div class="image"><img src="" class="imgClass" id="img1" /></div>
+              <p class="minValues" id="day1Min">Loading ...</p>
+              <p class="maxValues" id="day1Max">Loading ...</p>
+            </div>
+            <div class="icons">
+              <p class="wheather" id="day2"></p>
+              <div class="image"><img src="" class="imgClass" id="img2" /></div>
+              <p class="minValues" id="day2Min">Loading ...</p>
+              <p class="maxValues" id="day2Max">Loading ...</p>
+            </div>
+            <div class="icons">
+              <p class="wheather" id="day3"></p>
+              <div class="image"><img src="" class="imgClass" id="img3" /></div>
+              <p class="minValues" id="day3Min">Loading ...</p>
+              <p class="maxValues" id="day3Max">Loading ...</p>
+            </div>
+            <div class="icons">
+              <p class="wheather" id="day4"></p>
+              <div class="image"><img src="" class="imgClass" id="img4" /></div>
+              <p class="minValues" id="day4Min">Loading ...</p>
+              <p class="maxValues" id="day4Max">Loading ...</p>
+            </div>
+            <div class="icons">
+              <p class="wheather" id="day5"></p>
+              <div class="image"><img src="" class="imgClass" id="img5" /></div>
+              <p class="minValues" id="day5Min">Loading ...</p>
+              <p class="maxValues" id="day5Max">Loading ...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- how to add latitude and longitude from an api in javascript -->
+        <!-- <div class="day5-content">
           <div class="wrapper-hour-2">
             <div class="1st-displayed">
               <h3 class="title-daily">Astăzi</h3>
-              <time datetime="dd/mm">06.04</time>
-              <p class="max-7day" style="padding-top: 20%">3°</p>
-              <p class="min-7day" style="padding-top: 20%">3°</p>
+            
+              <p class="max-5day" style="padding-top: 20%">3°</p>
+              <p class="min-5day" style="padding-top: 20%">3°</p>
               <img
                 class="img-hour"
-                src="/images/02d.png"
+                src=""
                 alt=""
                 style="padding-top: 20%"
               />
@@ -160,11 +195,11 @@
               <div class="1st-displayed">
                 <h3 class="title-daily">Vineri</h3>
                 <time datetime="dd/mm">07.04</time>
-                <p class="max-7day" style="padding-top: 20%">3°</p>
-                <p class="min-7day" style="padding-top: 20%">3°</p>
+                <p class="max-5day" style="padding-top: 20%">3°</p>
+                <p class="min-5day" style="padding-top: 20%">3°</p>
                 <img
                   class="img-hour"
-                  src="/images/02d.png"
+                  src=""
                   alt=""
                   style="padding-top: 20%"
                 />
@@ -175,8 +210,8 @@
               <div class="1st-displayed">
                 <h3 class="title-daily">Sâmbătă</h3>
                 <time datetime="dd/mm">08.04</time>
-                <p class="max-7day" style="padding-top: 20%">3°</p>
-                <p class="min-7day" style="padding-top: 20%">3°</p>
+                <p class="max-5day" style="padding-top: 20%">3°</p>
+                <p class="min-5day" style="padding-top: 20%">3°</p>
                 <img
                   class="img-hour"
                   src="/images/02d.png"
@@ -190,8 +225,8 @@
               <div class="1st-displayed">
                 <h3 class="title-daily">Duminică</h3>
                 <time datetime="dd/mm">09.04</time>
-                <p class="max-7day" style="padding-top: 20%">3°</p>
-                <p class="min-7day" style="padding-top: 20%">3°</p>
+                <p class="max-5day" style="padding-top: 20%">3°</p>
+                <p class="min-5day" style="padding-top: 20%">3°</p>
                 <img
                   class="img-hour"
                   src="/images/02d.png"
@@ -205,8 +240,8 @@
               <div class="1st-displayed">
                 <h3 class="title-daily">Luni</h3>
                 <time datetime="dd/mm">10.04</time>
-                <p class="max-7day" style="padding-top: 20%">3°</p>
-                <p class="min-7day" style="padding-top: 20%">3°</p>
+                <p class="max-5day" style="padding-top: 20%">3°</p>
+                <p class="min-5day" style="padding-top: 20%">3°</p>
                 <img
                   class="img-hour"
                   src="/images/02d.png"
@@ -220,8 +255,8 @@
               <div class="1st-displayed">
                 <h3 class="title-daily">Marți</h3>
                 <time datetime="dd/mm">11.04</time>
-                <p class="max-7day" style="padding-top: 20%">3°</p>
-                <p class="min-7day" style="padding-top: 20%">3°</p>
+                <p class="max-5day" style="padding-top: 20%">3°</p>
+                <p class="min-5day" style="padding-top: 20%">3°</p>
                 <img
                   class="img-hour"
                   src="/images/02d.png"
@@ -235,8 +270,8 @@
               <div class="1st-displayed">
                 <h3 class="title-daily">Miercuri</h3>
                 <time datetime="dd/mm">12.04</time>
-                <p class="max-7day" style="padding-top: 20%">3°</p>
-                <p class="min-7day" style="padding-top: 20%">3°</p>
+                <p class="max-5day" style="padding-top: 20%">3°</p>
+                <p class="min-5day" style="padding-top: 20%">3°</p>
                 <img
                   class="img-hour"
                   src="/images/02d.png"
@@ -247,10 +282,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
-
+    <!-- </center> -->
     <script src="project.js"></script>
   </body>
 </html>
