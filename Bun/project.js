@@ -1,32 +1,16 @@
-const apiKey1 = '01bab4749d8f4bd18dee1c13d1dc32e6';
-const apiKey2 = '2a613dcf4fad63110a750c9b19b86759';
-const apiUrlCurrent =
-  'https://api.openweathermap.org/data/2.5/weather?units=metric&q=&lang=ro';
-const apiUrlForecast =
-  'https://api.openweathermap.org/data/2.5/forecast?q=&units=metric';
-const apiUrlGeo = `http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=2a613dcf4fad63110a750c9b19b86759`;
-
+const apiKey = '01bab4749d8f4bd18dee1c13d1dc32e6';
+const apiUrl =
+  'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
+const otherApi =
+  'https://api.openweathermap.org/data/2.5/forecast?q=&units=metric&units=standard';
+const geoApi =
+  'https://api.openweathermap.org/data/2.5/weather?lat=47.0667&lon=21.9333&units=metric&appid=01bab4749d8f4bd18dee1c13d1dc32e6';
 const searchBox = document.querySelector('.search input');
 const searchBtn = document.querySelector('.search button');
 const weatherIcon = document.querySelector('.weather-icon');
 
-async function getGeo() {
-  const respGeo = await fetch(
-    'http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=2a613dcf4fad63110a750c9b19b86759'
-  );
-  const dataGeo = await respGeo.json();
-  const { latitude, longitude } = dataGeo;
-
-  document.getElementById('lat').innerHTML = latitude;
-  document.getElementById('lon').innerHTML = longitude;
-
-}
-getGeo();
-
 async function checkWeather(city) {
-  const response = await fetch(
-    apiUrlCurrent + city + '01bab4749d8f4bd18dee1c13d1dc32e6'
-  );
+  const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
   var data = await response.json();
 
   console.log(data);
@@ -52,12 +36,20 @@ async function checkWeather(city) {
     weatherIcon.src = 'images/mist.png';
   }
 
+  sunrise = new Date(data.sys.sunrise * 1000).toLocaleString();
+  console.log(sunrise);
+  document.querySelector('.sunrise').innerHTML = sunrise;
+  sunset = new Date(data.sys.sunset * 1000).toLocaleString();
+  console.log(sunset);
+  document.querySelector('.sunset').innerHTML = sunset;
+
   const forecastResponse = await fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metrics&appid=${apiKey1}`
+    `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metrics&appid=${apiKey}`
   );
   const forecastData = await forecastResponse.json();
 
   console.log(forecastData);
+
   for (let i = 0; i < 5; i++) {
     document.getElementById('day' + (i + 1) + 'Min').innerHTML =
       'Min: ' +
@@ -89,6 +81,58 @@ async function checkWeather(city) {
   }
 }
 
+async function getLocation() {
+  const respLocation = await fetch(geoApi);
+  let dataFromGeo = await respLocation.json();
+  return dataFromGeo;
+}
+
+async function checkLocation() {
+  const dataFromGeo = await getLocation();
+
+  console.log(dataFromGeo);
+  document.querySelector('.city-name').innerHTML = dataFromGeo.name;
+  document.querySelector('.temperature').innerHTML =
+    Math.round(dataFromGeo.main.temp) + '°C';
+  document.querySelector('.humidity').innerHTML =
+    dataFromGeo.main.humidity + ' %';
+  document.querySelector('.wind').innerHTML = dataFromGeo.wind.speed + ' km/h';
+  document.querySelector('.temp-res').innerHTML =
+    Math.round(dataFromGeo.main.feels_like) + '°C';
+  document.querySelector('.sunrise').innerHTML = dataFromGeo.sys.sunrise;
+  document.querySelector('.sunset').innerHTML = dataFromGeo.sys.sunset;
+
+  // afisare imagine locala
+  if (dataFromGeo.weather[0].main == 'Clouds') {
+    weatherIcon.src = 'images/clouds.png';
+  } else if (dataFromGeo.weather[0].main == 'Clear') {
+    weatherIcon.src = 'images/clear.png';
+  } else if (dataFromGeo.weather[0].main == 'Rain') {
+    weatherIcon.src = 'images/rain.png';
+  } else if (dataFromGeo.weather[0].main == 'Drizzle') {
+    weatherIcon.src = 'images/drizzle.png';
+  } else if (dataFromGeo.weather[0].main == 'Mist') {
+    weatherIcon.src = 'images/mist.png';
+  }
+
+  // afisare apus si rasarit
+  sunrise = new Date(dataFromGeo.sys.sunrise * 1000).toLocaleString();
+  console.log(sunrise);
+  document.querySelector('.sunrise').innerHTML = sunrise;
+  sunset = new Date(dataFromGeo.sys.sunset * 1000).toLocaleString();
+  console.log(sunset);
+  document.querySelector('.sunset').innerHTML = sunset;
+
+  // call checkWeather
+  await checkWeather(dataFromGeo.name);
+}
+
+searchBtn.addEventListener('click', () => {
+  checkWeather(searchBox.value);
+});
+
+checkLocation();
+
 function checkDay(day) {
   const d = new Date();
   if (day + d.getDay() > 6) {
@@ -103,10 +147,6 @@ function hourToString(date) {
   const minutes = String(date.getMinutes()).padStart(2, '0');
   return `${hours}:${minutes}`;
 }
-
-searchBtn.addEventListener('click', () => {
-  checkWeather(searchBox.value);
-});
 
 const weekday = [
   'Sunday',

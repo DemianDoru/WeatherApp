@@ -1,79 +1,45 @@
-  const forecastResponse = await fetch(
-    `${otherApi}?q=${city}&units=metrics&appid=${apiKey}`
-  );
-  const forecastData = await forecastResponse.json();
+// const options = {
+//   enableHighAccuracy: true,
+//   timeout: 5000,
+//   maximumAge: 0,
+// };
 
-  for (let i = 0; i < 5; i++) {
-    document.getElementById('day' + (i + 1) + 'Min').innerHTML =
-      'Min: ' +
-      Number(forecastData.list[i].main.temp_min - 273.15).toFixed(1) +
-      '°';
-    document.getElementById('day' + (i + 1) + 'Max').innerHTML =
-      'Max: ' +
-      Number(forecastData.list[i].main.temp_max - 273.15).toFixed(2) +
-      '°';
-    document.getElementById('img' + (i + 1)).src =
-      'https://openweathermap.org/img/wn/' +
-      forecastData.list[i].weather[0].icon +
-      '.png';
-    document.getElementById('day' + (i + 1)).innerHTML = weekday[checkDay(i)];
-  }
+// function success(pos) {
+//   const crd = pos.coords;
 
-  for (let i = 0; i < 8; i++) {
-    if (currentDay === checkDay(i)) {
-      // determine if the current hour has already passed
-      const currentHourPassed =
-        today.getHours() >= new Date(forecastData.list[i].dt_txt).getHours();
-      if (currentHourPassed) {
-        // skip the current hour as it has already passed
-        continue;
-      }
-    }
-    hourlyForecast.push({
-      date: new Date(forecastData.list[i].dt_txt),
-      temperature: Math.round(forecastData.list[i].main.temp - 273.15),
-      iconUrl:
-        'https://openweathermap.org/img/wn/' +
-        forecastData.list[i].weather[0].icon +
-        '.png',
-    });
-  }
+//   console.log('Your current position is:');
+//   console.log(`Latitude : ${crd.latitude}`);
+//   console.log(`Longitude: ${crd.longitude}`);
+//   console.log(`More or less ${crd.accuracy} meters.`);
+// }
 
-  for (let i = 0; i < hourlyForecast.length; i++) {
-    document.getElementById('hour' + (i + 1)).innerHTML =
-      'Ora/Data: ' + hourlyForecast[i].date.toLocaleString();
-    document.getElementById('temp' + (i + 1)).innerHTML =
-      hourlyForecast[i].temperature + '°C';
-    document.querySelector('.img-hour' + (i + 1)).src =
-      hourlyForecast[i].iconUrl;
-    document.getElementById('hour' + (i + 1)).innerHTML = hourToString(
-      hourlyForecast[i].date
-    );
-  }
-}
+// function error(err) {
+//   console.warn(`ERROR(${err.code}): ${err.message}`);
+// }
 
-function checkDay(day) {
-  const today = new Date();
-  const todayDay = today.getDay();
-  return (day + todayDay) % 7;
-}
+// navigator.geolocation.getCurrentPosition(success, error, options);
 
-function hourToString(date) {
-  const hours = date.getHours();
-  const minutes = String(date.getMinutes()).padStart(2, '0');
-  return `${hours}:${minutes}`;
-}
+////////////////////////////////////////////
 
-searchBtn.addEventListener('click', () => {
-  checkWeather(searchBox.value);
-});
+///////////////////////////////////////////
 
-const weekday = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-];
+// Get user's current location
+// navigator.geolocation.getCurrentPosition(function (position) {
+//   const lat = position.coords.latitude;
+//   const lon = position.coords.longitude;
+
+//   // Make request to weather API using latitude and longitude
+//   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+
+//   fetch(apiUrl)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       // Do something with the weather data
+//       console.log(data);
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     });
+// });
+
+'http://api.openweathermap.org/geo/1.0/reverse?lat=47.0667&lon=21.9333&limit={limit}&appid=01bab4749d8f4bd18dee1c13d1dc32e6';
