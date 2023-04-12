@@ -1,4 +1,4 @@
-const apiKey = '01bab4749d8f4bd18dee1c13d1dc32e6';
+const apiKey = '';
 
 // const dotenv = require('dotenv');
 // dotenv.config();
